@@ -1,0 +1,75 @@
+catkin_make编译
+source
+roslaunch g308_test4 control_robot.launch 启动gazebo
+rosrun control simRobot.py 发布数据和键盘输入
+
+因为我使用的python，你应该是用c++
+我写了个test.py文件示例了一下订阅的数据和发布的数据
+然后输入x可以增大或减小每个关节的力矩，举个例子来看看效果
+
+仿真数据 topic:/simulation_data 数据类型:std_msgs.msg中的Float64MultiArray
+包含 ：
+每个关节的转动位置(12个)，（每个关节对应的顺序同下）
+每个关节的转动速度(12个)，
+每个关节的力矩(12个)，
+足端力(顺序fl,fr,rl,rr)（4个）
+位姿信息(四元数x,y,z,w，转换后即马头yaw,pitch,roll)，
+位置信息（x,y,z），
+转动速度(绕x,y,z轴转的角速度)，
+线性速度（x,y,z方向）
+转动加速度（绕x,y,z轴加速度）
+线性加速度（x,y,z方向加速度）
+commands(x,y,yaw的速度)
+
+发布的关节力矩数据 topic:/commands 数据类型：std_msgs.msg中的Float64MultiArray
+关节的顺序
+    """
+    i 0--11
+    name: 
+  - FL_calf_joint
+  - FL_hip_joint
+  - FL_thigh_joint
+  - FR_calf_joint
+  - FR_hip_joint
+  - FR_thigh_joint
+  - RL_calf_joint
+  - RL_hip_joint
+  - RL_thigh_joint
+  - RR_calf_joint
+  - RR_hip_joint
+  - RR_thigh_joint
+    """
+
+键盘输入：w/s对应x方向的速度输入
+        d/a对应y方向的速度输入
+        e/q对应yaw的速度输入
+        空格清空x,y,yaw
+        r让模型回到原点(还有点bug，要多按几次)
+        i让模型站立
+
+
+0125更新
+1、增加/simulation_data的数据数量（增加位置，线速度，imu，足端力）
+2、添加初始化模型，键盘输入"i"
+
+0201更新
+1、发现force传输bug，已改
+
+0204更新
+1、使用新模型
+2、添加gazebo暂停功能 enter 键
+3、删除键盘 i 功能
+
+0205更新
+1、重新添加 i 来初始化
+
+0211更新
+1、使用宇树的接触力gazebo插件
+2、删除enter键作用
+
+0216更新
+1、删除预期值输入
+
+0217
+1、使用宇树的关节msg
+2、删除不必要功能(删除输出数据，删除init)

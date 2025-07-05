@@ -1,0 +1,237 @@
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="car">
+    <xacro:property name = "w_r" value = "0.04"/>
+    <xacro:property name = "w_l" value = "0.01"/>
+    <xacro:property name = "PI" value = "3.1415927"/>
+    <xacro:property name = "b_r" value = "0.25"/>
+    <xacro:property name = "b_l" value = "0.02"/>
+
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <cylinder radius="${b_r}" length="${b_l}"/>
+            </geometry>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${b_r}" length="${b_l}"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="1.0"/>
+            <inertia ixx="${(b_r*b_r*3+b_l*b_l)/12}" ixy="0.0" ixz="0.0" iyy="${(b_r*b_r*3+b_l*b_l)/12}" iyz="0.0" izz="${b_r*b_r/2}"/>
+        </inertial>
+    </link>
+
+    <link name="wheel1">
+        <visual>
+            <geometry>
+                <cylinder radius="${w_r}" length="${w_l}"/>
+            </geometry>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${w_r}" length="${w_l}"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="1.0"/>
+            <inertia ixx="0.0004083" ixy="0.0" ixz="0.0" iyy="0.0004083" iyz="0.0" izz="0.0008"/>
+        </inertial>
+    </link>
+
+    <link name="wheel2">
+        <visual>
+            <geometry>
+                <cylinder radius="${w_r}" length="${w_l}"/>
+            </geometry>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${w_r}" length="${w_l}"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="1.0"/>
+            <inertia ixx="0.0004083" ixy="0.0" ixz="0.0" iyy="0.0004083" iyz="0.0" izz="0.0008"/>
+        </inertial>
+    </link>
+
+    <link name="wheel3">
+        <visual>
+            <geometry>
+                <cylinder radius="${w_r}" length="${w_l}"/>
+            </geometry>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${w_r}" length="${w_l}"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="1.0"/>
+            <inertia ixx="0.0004083" ixy="0.0" ixz="0.0" iyy="0.0004083" iyz="0.0" izz="0.0008"/>
+        </inertial>
+    </link>
+
+    <link name="wheel4">
+        <visual>
+            <geometry>
+                <cylinder radius="${w_r}" length="${w_l}"/>
+            </geometry>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${w_r}" length="${w_l}"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="1.0"/>
+            <inertia ixx="0.0004083" ixy="0.0" ixz="0.0" iyy="0.0004083" iyz="0.0" izz="0.0008"/>
+        </inertial>
+    </link>
+
+    <joint name="base_to_wheel1" type="continuous">
+        <parent link="base_link"/>
+        <child link="wheel1"/>
+        <origin rpy="0 ${-PI/2} 0" xyz="0.255 0 -0.01"/>
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="base_to_wheel2" type="continuous">
+        <parent link="base_link"/>
+        <child link="wheel2"/>
+        <origin rpy="0 ${-PI/2} 0" xyz="-0.255 0 -0.01"/>
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="base_to_wheel3" type="continuous">
+        <parent link="base_link"/>
+        <child link="wheel3"/>
+        <origin rpy="${-PI/2} 0 0" xyz="0 0.255 -0.01"/>
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <joint name="base_to_wheel4" type="continuous">
+        <parent link="base_link"/>
+        <child link="wheel4"/>
+        <origin rpy="${-PI/2} 0 0" xyz="0 -0.255 -0.01"/>
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <link name="imu">
+        <visual>
+            <geometry>
+                <box size="0.05 0.05 0.05"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <box size="0.05 0.05 0.05"/>
+        </collision>   
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="1.0"/>
+            <inertia ixx="0.000416667" ixy="0.0" ixz="0.0" iyy="0.000416667" iyz="0.0" izz="0.000416667"/>
+        </inertial>
+    </link>
+
+    <joint name="imu_to_base" type="fixed">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="imu"/>
+    </joint>
+
+    <gazebo reference = "wheel1">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
+    <gazebo reference = "wheel2">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
+    <gazebo reference = "wheel3">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
+    <gazebo reference = "wheel4">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
+    <gazebo reference = "base_link">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+    <gazebo reference = "imu">
+        <material>Gazebo/Red</material>
+    </gazebo>
+
+    <gazebo>
+        <plugin name="mecanum_controller" filename="libgazebo_ros_planar_move.so">
+            <ros>
+                <!-- <namespace>/demo</namespace> -->
+                <remapping>cmd_vel:=cmd_vel</remapping>
+                <remapping>odom:=odom</remapping>
+            </ros>
+
+            <update_rate>100</update_rate>
+            <publish_rate>100</publish_rate>
+
+            <publish_odom>false</publish_odom>
+            <publish_odom_tf>false</publish_odom_tf>
+
+            <leftFrontJoint>base_to_wheel1</leftFrontJoint>
+            <rightFrontJoint>base_to_wheel2</rightFrontJoint>
+            <leftRearJoint>base_to_wheel3</leftRearJoint>
+            <rightRearJoint>base_to_wheel4</rightRearJoint>
+            <wheelSeparation>0.51</wheelSeparation>
+            <wheelDiameter>0.08</wheelDiameter>
+        </plugin>
+    </gazebo>
+
+    <gazebo reference="imu_link">
+        <gravity>true</gravity>
+        <sensor name="imu_sensor" type="imu">
+            <always_on>true</always_on>
+            <update_rate>100</update_rate>
+            <visualize>true</visualize>
+            <topic>__default_topic__</topic>
+            <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+                <topicName>/livox/imu</topicName>
+                <bodyName>imu_link</bodyName>
+                <updateRateHZ>100.0</updateRateHZ>
+                <gaussianNoise>0.0</gaussianNoise>
+                <xyzOffset>0 0 0</xyzOffset>
+                <rpyOffset>0 0 0</rpyOffset>
+                <frameName>imu_link</frameName>
+                <serviceName>default_service</serviceName>
+                <alwaysOn>true</alwaysOn>
+                <maxAngularVelocity>100.0</maxAngularVelocity>
+                <noiseDensity>0.0</noiseDensity>
+                <randomWalk>0.0</randomWalk>
+                <ros>
+                    <remapping>~/out:=/livox/imu</remapping>
+                </ros>
+            </plugin>
+        </sensor>
+    </gazebo>
+    <xacro:include filename="$(find livox_laser_simulation)/urdf/Mid360.xacro" />
+    <xacro:mid360 name="livox_frame" parent="base_link" topic="/livox/lidar">
+        <origin xyz="0 0.0 0.175" rpy="0 0 0"/>
+    </xacro:mid360>
+
+</robot>

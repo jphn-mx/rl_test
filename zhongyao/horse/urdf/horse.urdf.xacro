@@ -1,0 +1,900 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="horse">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.000988270498048557 0.00062224438766019 2.68014743063445E-18"
+        rpy="0 0 0" />
+      <mass
+        value="16.5288754771647" />
+      <inertia
+        ixx="0.130459190161259"
+        ixy="0.00137831063792757"
+        ixz="-2.13327794949787E-18"
+        iyy="0.334872378601924"
+        iyz="2.72965225715421E-18"
+        izz="0.259939977954239" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://horse/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://horse/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="zuohou1">
+    <inertial>
+      <origin
+        xyz="0.0509550526508137 7.60745069066163E-09 0.0101844854715105"
+        rpy="0 0 0" />
+      <mass
+        value="0.489309823559207" />
+      <inertia
+        ixx="0.00058349591786804"
+        ixy="-1.92977739727799E-10"
+        ixz="-2.01566934111795E-05"
+        iyy="0.000638747149993603"
+        iyz="-5.88815517631386E-10"
+        izz="0.000437849797972024" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://horse/meshes/zuohou1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://horse/meshes/zuohou1.STL" />
+      </geometry>
+    </collision>
+    <dynamic damping="0.1" friction="0.1"/>
+  </link>
+  <joint
+    name="zuohou1j"
+    type="continuous">
+    <origin
+      xyz="0.21 -0.08 0"
+      rpy="1.5358 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="zuohou1" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="3.14"
+      upper="-3.14"
+      effort="20"
+      velocity="2" />
+  </joint>
+  <link
+    name="zuohou2">
+    <inertial>
+      <origin
+        xyz="0.0887288713166055 0 -0.0625039825346419"
+        rpy="0 0 0" />
+      <mass
+        value="0.812601884733516" />
+      <inertia
+        ixx="0.00062518989218891"
+        ixy="1.6877660869634E-18"
+        ixz="0.000681762991461073"
+        iyy="0.00586246560227408"
+        iyz="-4.91279109407494E-19"
+        izz="0.00593067217164617" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://horse/meshes/zuohou2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://horse/meshes/zuohou2.STL" />
+      </geometry>
+    </collision>
+    <dynamic damping="0.1" friction="0.1"/>
+  </link>
+  <joint
+    name="zuohou2j"
+    type="continuous">
+    <origin
+      xyz="0.055 0 0.040099"
+      rpy="-3.1416 0 -1.446" />
+    <parent
+      link="zuohou1" />
+    <child
+      link="zuohou2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="3.14"
+      upper="-3.14"
+      effort="20"
+      velocity="2" />
+  </joint>
+  <link
+    name="zuohou3">
+    <inertial>
+      <origin
+        xyz="0.0664819265813218 6.61710686244987E-11 -0.0357568278163642"
+        rpy="0 0 0" />
+      <mass
+        value="0.272846997327172" />
+      <inertia
+        ixx="9.67069291285659E-05"
+        ixy="-8.16503272509025E-13"
+        ixz="2.71516919114255E-05"
+        iyy="0.00105759444351874"
+        iyz="-1.19904076495122E-13"
+        izz="0.0011089604520678" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://horse/meshes/zuohou3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://horse/meshes/zuohou3.STL" />
+      </geometry>
+    </collision>
+    <dynamic damping="0.1" friction="0.1"/>
+  </link>
+  <joint
+    name="zuohou3j"
+    type="continuous">
+    <origin
+      xyz="0.2 0 -0.082647"
+      rpy="0 0 0.80618" />
+    <parent
+      link="zuohou2" />
+    <child
+      link="zuohou3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="3.14"
+      upper="-3.14"
+      effort="20"
+      velocity="2" />
+  </joint>
+  <link
+    name="zuoqian1">
+    <inertial>
+      <origin
+        xyz="0.0509550525848549 -1.36819854621231E-09 0.0101844844164358"
+        rpy="0 0 0" />
+      <mass
+        value="0.489309817445998" />
+      <inertia
+        ixx="0.000583495934613441"
+        ixy="-1.94141138497289E-10"
+        ixz="-2.01566701601185E-05"
+        iyy="0.000638747102850655"
+        iyz="-5.01446331309938E-10"
+        izz="0.000437849810813172" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://horse/meshes/zuoqian1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://horse/meshes/zuoqian1.STL" />
+      </geometry>
+    </collision>
+    <dynamic damping="0.1" friction="0.1"/>
+  </link>
+  <joint
+    name="zuoqian1j"
+    type="continuous">
+    <origin
+      xyz="-0.21 -0.08 0"
+      rpy="-1.5259 0 -3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="zuoqian1" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="3.14"
+      upper="-3.14"
+      effort="20"
+      velocity="2" />
+  </joint>
+  <link
+    name="zuoqian2">
+    <inertial>
+      <origin
+        xyz="0.0887288713166055 0 -0.0652966112581331"
+        rpy="0 0 0" />
+      <mass
+        value="0.812601884733515" />
+      <inertia
+        ixx="0.000625189892188902"
+        ixy="-2.5254287322387E-18"
+        ixz="0.000681762991461078"
+        iyy="0.00586246560227407"
+        iyz="3.3881317890172E-19"
+        izz="0.00593067217164617" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://horse/meshes/zuoqian2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://horse/meshes/zuoqian2.STL" />
+      </geometry>
+    </collision>
+    <dynamic damping="0.1" friction="0.1"/>
+  </link>
+  <joint
+    name="zuoqian2j"
+    type="continuous">
+    <origin
+      xyz="0.055 0 0.037306"
+      rpy="-3.1416 0 1.9985" />
+    <parent
+      link="zuoqian1" />
+    <child
+      link="zuoqian2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="3.14"
+      upper="-3.14"
+      effort="20"
+      velocity="2" />
+  </joint>
+  <link
+    name="zuoqian3">
+    <inertial>
+      <origin
+        xyz="0.0664819265730844 -9.29671374605423E-11 -0.0370076954345057"
+        rpy="0 0 0" />
+      <mass
+        value="0.272846997281238" />
+      <inertia
+        ixx="9.67069290982143E-05"
+        ixy="1.15308057369175E-12"
+        ixz="2.71516920884114E-05"
+        iyy="0.00105759444340122"
+        iyz="-1.33336717995968E-13"
+        izz="0.00110896045193731" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://horse/meshes/zuoqian3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://horse/meshes/zuoqian3.STL" />
+      </geometry>
+    </collision>
+    <dynamic damping="0.1" friction="0.1"/>
+  </link>
+  <joint
+    name="zuoqian3j"
+    type="continuous">
+    <origin
+      xyz="0.2 0 -0.084189"
+      rpy="0 0 1.2893" />
+    <parent
+      link="zuoqian2" />
+    <child
+      link="zuoqian3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="3.14"
+      upper="-3.14"
+      effort="20"
+      velocity="2" />
+  </joint>
+  <link
+    name="youhou1">
+    <inertial>
+      <origin
+        xyz="0.0509550525593675 5.76336066458044E-09 0.0101844845886479"
+        rpy="0 0 0" />
+      <mass
+        value="0.489309821097259" />
+      <inertia
+        ixx="0.000583495923778425"
+        ixy="-1.92561210297664E-10"
+        ixz="-2.01566883277619E-05"
+        iyy="0.000638747125162699"
+        iyz="-5.73177901588693E-10"
+        izz="0.000437849807394175" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://horse/meshes/youhou1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://horse/meshes/youhou1.STL" />
+      </geometry>
+    </collision>
+    <dynamic damping="0.1" friction="0.1"/>
+  </link>
+  <joint
+    name="youhou1j"
+    type="continuous">
+    <origin
+      xyz="0.21 0.08 0"
+      rpy="-1.5865 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="youhou1" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="3.14"
+      upper="-3.14"
+      effort="20"
+      velocity="2" />
+  </joint>
+  <link
+    name="youhou2">
+    <inertial>
+      <origin
+        xyz="0.0887288713166055 0 -0.0570584422937337"
+        rpy="0 0 0" />
+      <mass
+        value="0.812601884733516" />
+      <inertia
+        ixx="0.000625189892188906"
+        ixy="2.05617247945981E-19"
+        ixz="0.000681762991461078"
+        iyy="0.00586246560227408"
+        iyz="3.70153397950129E-19"
+        izz="0.00593067217164617" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://horse/meshes/youhou2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://horse/meshes/youhou2.STL" />
+      </geometry>
+    </collision>
+    <dynamic damping="0.1" friction="0.1"/>
+  </link>
+  <joint
+    name="youhou2j"
+    type="continuous">
+    <origin
+      xyz="0.055 0 0.045545"
+      rpy="-3.1416 0 1.4278" />
+    <parent
+      link="youhou1" />
+    <child
+      link="youhou2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="3.14"
+      upper="-3.14"
+      effort="20"
+      velocity="2" />
+  </joint>
+  <link
+    name="youhou3">
+    <inertial>
+      <origin
+        xyz="0.066481926627994 1.75699177429323E-10 -0.0312591821299887"
+        rpy="0 0 0" />
+      <mass
+        value="0.272846997587101" />
+      <inertia
+        ixx="9.67069292627314E-05"
+        ixy="-2.17468581216179E-12"
+        ixz="2.71516918207882E-05"
+        iyy="0.00105759444419521"
+        iyz="-1.08331504946886E-13"
+        izz="0.00110896045275955" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://horse/meshes/youhou3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://horse/meshes/youhou3.STL" />
+      </geometry>
+    </collision>
+    <dynamic damping="0.1" friction="0.1"/>
+  </link>
+  <joint
+    name="youhou3j"
+    type="continuous">
+    <origin
+      xyz="0.2 0 -0.081699"
+      rpy="0 0 -1.1207" />
+    <parent
+      link="youhou2" />
+    <child
+      link="youhou3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="3.14"
+      upper="-3.14"
+      effort="20"
+      velocity="2" />
+  </joint>
+  <link
+    name="youqian1">
+    <inertial>
+      <origin
+        xyz="0.0509550525376855 1.49380096074909E-09 0.0101844841700187"
+        rpy="0 0 0" />
+      <mass
+        value="0.489309818339437" />
+      <inertia
+        ixx="0.000583495931579792"
+        ixy="-1.93192790095249E-10"
+        ixz="-2.01566773059857E-05"
+        iyy="0.00063874710463898"
+        iyz="-5.31419768235144E-10"
+        izz="0.000437849812785292" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://horse/meshes/youqian1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://horse/meshes/youqian1.STL" />
+      </geometry>
+    </collision>
+    <dynamic damping="0.1" friction="0.1"/>
+  </link>
+  <joint
+    name="youqian1j"
+    type="continuous">
+    <origin
+      xyz="-0.21 0.08 0"
+      rpy="1.5934 0 -3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="youqian1" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="3.14"
+      upper="-3.14"
+      effort="20"
+      velocity="2" />
+  </joint>
+  <link
+    name="youqian2">
+    <inertial>
+      <origin
+        xyz="0.0887288713166056 -1.11022302462516E-16 -0.0590440470192461"
+        rpy="0 0 0" />
+      <mass
+        value="0.812601884733516" />
+      <inertia
+        ixx="0.000625189892188906"
+        ixy="1.93954663053474E-18"
+        ixz="0.000681762991461075"
+        iyy="0.00586246560227408"
+        iyz="1.79570984817912E-19"
+        izz="0.00593067217164618" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://horse/meshes/youqian2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://horse/meshes/youqian2.STL" />
+      </geometry>
+    </collision>
+    <dynamic damping="0.1" friction="0.1"/>
+  </link>
+  <joint
+    name="youqian2j"
+    type="continuous">
+    <origin
+      xyz="0.055 0 0.043559"
+      rpy="-3.1416 0 -1.7563" />
+    <parent
+      link="youqian1" />
+    <child
+      link="youqian2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="3.14"
+      upper="-3.14"
+      effort="20"
+      velocity="2" />
+  </joint>
+  <link
+    name="youqian3">
+    <inertial>
+      <origin
+        xyz="0.0664819265837783 7.81885016801209E-11 -0.0328200107571637"
+        rpy="0 0 0" />
+      <mass
+        value="0.272846997340857" />
+      <inertia
+        ixx="9.67069291371633E-05"
+        ixy="-9.65186928584216E-13"
+        ixz="2.71516920590333E-05"
+        iyy="0.00105759444355615"
+        iyz="-1.19556259355991E-13"
+        izz="0.00110896045210386" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://horse/meshes/youqian3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://horse/meshes/youqian3.STL" />
+      </geometry>
+    </collision>
+    <dynamic damping="0.1" friction="0.1"/>
+  </link>
+  <joint
+    name="youqian3j"
+    type="continuous">
+    <origin
+      xyz="0.2 0 -0.082124"
+      rpy="0 0 -1.0368" />
+    <parent
+      link="youqian2" />
+    <child
+      link="youqian3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="3.14"
+      upper="-3.14"
+      effort="20"
+      velocity="2" />
+  </joint>
+
+  <!--zuohou-->
+  <transmission name="zuohou1t">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="zuohou1j">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="zuohou1a">
+      <mechanicalReduction>1.0</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="zuohou2t">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="zuohou2j">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="zuohou2a">
+      <mechanicalReduction>1.0</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="zuohou3t">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="zuohou3j">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="zuohou3a">
+      <mechanicalReduction>1.0</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <!--zuoqian-->
+  <transmission name="zuoqian1t">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="zuoqian1j">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="zuoqian1a">
+      <mechanicalReduction>1.0</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="zuoqian2t">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="zuoqian2j">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="zuoqian2a">
+      <mechanicalReduction>1.0</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="zuoqian3t">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="zuoqian3j">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="zuoqian3a">
+      <mechanicalReduction>1.0</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <!--youhou-->
+  <transmission name="youhou1t">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="youhou1j">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="youhou1a">
+      <mechanicalReduction>1.0</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="youhou2t">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="youhou2j">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="youhou2a">
+      <mechanicalReduction>1.0</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="youhou3t">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="youhou3j">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="youhou3a">
+      <mechanicalReduction>1.0</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <!--youqian-->
+  <transmission name="youqian1t">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="youqian1j">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="youqian1a">
+      <mechanicalReduction>1.0</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="youqian2t">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="youqian2j">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="youqian2a">
+      <mechanicalReduction>1.0</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="youqian3t">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="youqian3j">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="youqian3a">
+      <mechanicalReduction>1.0</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/horse</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      <legacyModeNS>true</legacyModeNS>
+    </plugin>
+  </gazebo>
+
+</robot>

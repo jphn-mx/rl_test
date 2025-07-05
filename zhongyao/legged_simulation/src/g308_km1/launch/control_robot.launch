@@ -1,0 +1,43 @@
+<launch>
+    <arg name="model" default="$(find g308_km1)/urdf/g308_km1.urdf.xacro" />
+    <param name="robot_description" command="$(find xacro)/xacro $(arg model)" />
+
+    <arg name="paused" default="false"/>
+    <arg name="use_sim_time" default="true"/>
+    <arg name="gui" default="true"/>
+    <arg name="headless" default="false"/>
+    <arg name="debug" default="false"/>
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find g308_km1)/ground2.world"/>
+        <arg name="debug" value="$(arg debug)"/>
+        <arg name="gui" value="$(arg gui)" />
+        <arg name="paused" value="$(arg paused)"/>
+        <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+        <arg name="headless" value="$(arg headless)"/>
+    </include>
+
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model myrobot -param robot_description -x 0.0 -y 0.0 -z 0.5"/>
+
+    <rosparam file="$(find g308_km1)/config/RobotJoint.yaml" command="load"/>
+
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/horse" args="joint_state_controller FL_hip_joint FL_thigh_joint FL_calf_joint RL_hip_joint 
+                                                                                                                                RL_thigh_joint RL_calf_joint FR_hip_joint FR_thigh_joint 
+                                                                                                                                FR_calf_joint RR_hip_joint RR_thigh_joint RR_calf_joint"/>
+
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+        <remap from="/joint_states" to="/horse/joint_states" />
+    </node>
+    
+    <param
+        name="description"
+        textfile="$(find g308_km1)/urdf/g308_km1.urdf.xacro" />
+
+    <node
+        name="rviz"
+        pkg="rviz"
+        type="rviz"
+        args="-d $(find g308_km1)/config/rviz.rviz" />
+
+</launch>

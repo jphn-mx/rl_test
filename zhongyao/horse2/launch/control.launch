@@ -1,0 +1,45 @@
+<launch>
+    <arg name="model" default="$(find horse2)/urdf/horse2.urdf.xacro" />
+    <param name="robot_description" command="$(find xacro)/xacro $(arg model)" />
+
+    <arg name="paused" default="false"/>
+    <arg name="use_sim_time" default="true"/>
+    <arg name="gui" default="true"/>
+    <arg name="headless" default="false"/>
+    <arg name="debug" default="false"/>
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find gazebo_ros)/worlds/gazebo_demo.world"/>
+        <arg name="debug" value="$(arg debug)"/>
+        <arg name="gui" value="$(arg gui)" />
+        <arg name="paused" value="$(arg paused)"/>
+        <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+        <arg name="headless" value="$(arg headless)"/>
+    </include>
+
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model myrobot -param robot_description -x 0.0 -y 0.0 -z 2.0"/>
+
+    <rosparam file="$(find horse2)/config/control.yaml" command="load"/>
+
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/horse2" args="joint_state_controller zuohou1j_position_controller zuohou2j_position_controller zuohou3j_position_controller zuoqian1j_position_controller zuoqian2j_position_controller zuoqian3j_position_controller youhou1j_position_controller youhou2j_position_controller youhou3j_position_controller youqian1j_position_controller youqian2j_position_controller youqian3j_position_controller"/>
+
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+        <remap from="/joint_states" to="/horse2/joint_states" />
+    </node>
+    
+    <param
+        name="description"
+        textfile="$(find horse2)/urdf/horse2.urdf.xacro" />
+    <!-- <node
+        name="joint_state_publisher_gui"
+        pkg="joint_state_publisher_gui"
+        type="joint_state_publisher_gui" /> -->
+
+    <node
+        name="rviz"
+        pkg="rviz"
+        type="rviz"
+        args="-d $(find horse2)/config/rviz.rviz" />
+
+</launch>

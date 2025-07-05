@@ -1,0 +1,1266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="g308_km" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <link
+    name="base">
+    <inertial>
+      <origin
+        xyz="-0.021 0.00 -0.006"
+        rpy="0 0 0" />
+      <mass
+        value="4.104" />
+      <inertia
+        ixx="0.022"
+        ixy="0.00"
+        ixz="0.00"
+        iyy="0.052"
+        iyz="0.00"
+        izz="0.063" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="FL_hip">
+    <inertial>
+      <origin
+        xyz="0.046 0.00 -0.001"
+        rpy="0 0 0" />
+      <mass
+        value="1.034" />
+      <inertia
+        ixx="0.001"
+        ixy="0.0"
+        ixz="0.0"
+        iyy="0.001"
+        iyz="0.00"
+        izz="0.002" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/FL_hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0.501960784313725 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/FL_hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL_hip_joint"
+    type="revolute">
+    <origin
+      xyz="-0.1699 -0.0615 0.0077356"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="base" />
+    <child
+      link="FL_hip" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.25"
+      upper="0.25"
+      effort="20"
+      velocity="10" />
+  </joint>
+  <link
+    name="FL_thigh">
+    <inertial>
+      <origin
+        xyz="-0.002683 -0.027136 -0.042559"
+        rpy="0 0 0" />
+      <mass
+        value="1.623153" />
+      <inertia
+        ixx="0.007266"
+        ixy="-0.000730"
+        ixz="-0.00177"
+        iyy="0.002161"
+        iyz="-0.000979"
+        izz="0.007364" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/FL_thigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/FL_thigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL_thigh_joint"
+    type="revolute">
+    <origin
+      xyz="0.0677 0 -0.039"
+      rpy="0 0 0" />
+    <parent
+      link="FL_hip" />
+    <child
+      link="FL_thigh" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5"
+      upper="1.5"
+      effort="20"
+      velocity="10" />
+  </joint>
+  <link
+    name="FL_calf">
+    <inertial>
+      <origin
+        xyz="0.050286422924934 -0.0913683369164015 0.0100012603719424"
+        rpy="0 0 0" />
+      <mass
+        value="0.243573" />
+      <inertia
+        ixx="0.001367"
+        ixy="0.000642"
+        ixz="0.0"
+        iyy="0.000356"
+        iyz="0.0"
+        izz="0.001698" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/FL_calf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/FL_calf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL_calf_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.22 -0.0765"
+      rpy="0 0 0" />
+    <parent
+      link="FL_thigh" />
+    <child
+      link="FL_calf" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-2.3"
+      upper="0"
+      effort="20"
+      velocity="10" />
+  </joint>
+  <link
+    name="FL_foot">
+    <inertial>
+      <origin
+        xyz="5.57990809113562E-09 0.000156464784550781 6.38025034006562E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0311902243903797" />
+      <inertia
+        ixx="5.06120841117781E-06"
+        ixy="1.89067382214396E-14"
+        ixz="8.44229934715806E-13"
+        iyy="4.98515638872325E-06"
+        iyz="-1.02064134491074E-08"
+        izz="5.01872622594312E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/FL_foot.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/FL_foot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL_foot_joint"
+    type="fixed">
+    <origin
+      xyz="0.096205 -0.22407 0.01"
+      rpy="2.9432 1.5708 0" />
+    <parent
+      link="FL_calf" />
+    <child
+      link="FL_foot" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      effort="20"
+      velocity="10" />
+  </joint>
+  <link
+    name="RL_hip">
+    <inertial>
+      <origin
+        xyz="-0.045606 0.00005 -0.000897"
+        rpy="0 0 0" />
+      <mass
+        value="1.034431" />
+      <inertia
+        ixx="0.000668"
+        ixy="-0.000004"
+        ixz="-0.000019"
+        iyy="0.001443"
+        iyz="-9.7756225314779E-09"
+        izz="0.001692" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/RL_hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0.501960784313725 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/RL_hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RL_hip_joint"
+    type="revolute">
+    <origin
+      xyz="0.12709 -0.0615 0.0077356"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="base" />
+    <child
+      link="RL_hip" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.25"
+      upper="0.25"
+      effort="20"
+      velocity="10" />
+  </joint>
+  <link
+    name="RL_thigh">
+    <inertial>
+      <origin
+        xyz="-0.014325 -0.015494 -0.0263559"
+        rpy="0 0 0" />
+      <mass
+        value="1.623153" />
+      <inertia
+        ixx="0.007266"
+        ixy="-0.000730"
+        ixz="-0.000177"
+        iyy="0.002161"
+        iyz="-0.000979"
+        izz="0.007364" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/RL_thigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/RL_thigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RL_thigh_joint"
+    type="revolute">
+    <origin
+      xyz="-0.056059 -0.011641 -0.059"
+      rpy="0 0 0" />
+    <parent
+      link="RL_hip" />
+    <child
+      link="RL_thigh" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5"
+      upper="1.5"
+      effort="20"
+      velocity="10" />
+  </joint>
+  <link
+    name="RL_calf">
+    <inertial>
+      <origin
+        xyz="0.050286422924934 -0.0913683369164015 0.0100012603719424"
+        rpy="0 0 0" />
+      <mass
+        value="0.243573" />
+      <inertia
+        ixx="0.001367"
+        ixy="-0.000642"
+        ixz="0.0"
+        iyy="0.000356"
+        iyz="0.0"
+        izz="0.001698" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/RL_calf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/RL_calf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RL_calf_joint"
+    type="revolute">
+    <origin
+      xyz="-0.011641 -0.20836 -0.0565"
+      rpy="0 0 0" />
+    <parent
+      link="RL_thigh" />
+    <child
+      link="RL_calf" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-2.3"
+      upper="0"
+      effort="20"
+      velocity="10" />
+  </joint>
+  <link
+    name="RL_foot">
+    <inertial>
+      <origin
+        xyz="5.57990809113562E-09 0.000156464784550669 6.38025034006562E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0311902243903798" />
+      <inertia
+        ixx="5.06120841117782E-06"
+        ixy="1.89067431518709E-14"
+        ixz="8.44229935295326E-13"
+        iyy="4.98515638872326E-06"
+        iyz="-1.0206413449107E-08"
+        izz="5.01872622594313E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/RL_foot.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/RL_foot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RL_foot_joint"
+    type="fixed">
+    <origin
+      xyz="0.096205 -0.22407 0.01"
+      rpy="2.9432 1.5708 0" />
+    <parent
+      link="RL_calf" />
+    <child
+      link="RL_foot" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="FR_hip">
+    <inertial>
+      <origin
+        xyz="0.0045611 0.00005 0.000897"
+        rpy="0 0 0" />
+      <mass
+        value="1.034431" />
+      <inertia
+        ixx="0.000668"
+        ixy="0.000004"
+        ixz="-0.00002"
+        iyy="0.001444"
+        iyz="0.0"
+        izz="0.001692" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/FR_hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0.501960784313725 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/FR_hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR_hip_joint"
+    type="revolute">
+    <origin
+      xyz="-0.1699 0.0615 0.0077356"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="base" />
+    <child
+      link="FR_hip" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.25"
+      upper="0.25"
+      effort="20"
+      velocity="10" />
+  </joint>
+  <link
+    name="FR_thigh">
+    <inertial>
+      <origin
+        xyz="-0.014296 -0.015465 0.022559"
+        rpy="0 0 0" />
+      <mass
+        value="1.623153" />
+      <inertia
+        ixx="0.007268"
+        ixy="-0.000732"
+        ixz="0.000177"
+        iyy="0.002162"
+        iyz="0.00098"
+        izz="0.007366" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/FR_thigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/FR_thigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR_thigh_joint"
+    type="revolute">
+    <origin
+      xyz="0.079341 -0.011641 0.059"
+      rpy="0 0 0" />
+    <parent
+      link="FR_hip" />
+    <child
+      link="FR_thigh" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5"
+      upper="1.5"
+      effort="20"
+      velocity="10" />
+  </joint>
+  <link
+    name="FR_calf">
+    <inertial>
+      <origin
+        xyz="0.0502864229245757 -0.0913683369170326 0.0100012603711955"
+        rpy="0 0 0" />
+      <mass
+        value="0.24357427073011" />
+      <inertia
+        ixx="0.001367"
+        ixy="0.000642"
+        ixz="0.00"
+        iyy="0.000356"
+        iyz="0.00"
+        izz="0.001698" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/FR_calf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/FR_calf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR_calf_joint"
+    type="revolute">
+    <origin
+      xyz="-0.011641 -0.20836 0.0365"
+      rpy="0 0 0" />
+    <parent
+      link="FR_thigh" />
+    <child
+      link="FR_calf" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-2.3"
+      upper="0"
+      effort="20"
+      velocity="10" />
+  </joint>
+  <link
+    name="FR_foot">
+    <inertial>
+      <origin
+        xyz="5.57990809113562E-09 0.000156464784550669 6.38025034006839E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0311902243903797" />
+      <inertia
+        ixx="5.06120841117781E-06"
+        ixy="1.8906738882967E-14"
+        ixz="8.44229938233497E-13"
+        iyy="4.98515638872325E-06"
+        iyz="-1.0206413449107E-08"
+        izz="5.01872622594312E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/FR_foot.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/FR_foot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR_foot_joint"
+    type="fixed">
+    <origin
+      xyz="0.096204687182093 -0.224068557253551 0.00999999999925294"
+      rpy="2.94324795442943 1.5707963267949 0" />
+    <parent
+      link="FR_calf" />
+    <child
+      link="FR_foot" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="RR_hip">
+    <inertial>
+      <origin
+        xyz="-0.045611 0.000114 0.000897"
+        rpy="0 0 0" />
+      <mass
+        value="1.034431" />
+      <inertia
+        ixx="0.000668"
+        ixy="-0.000003"
+        ixz="0.000019"
+        iyy="0.001443"
+        iyz="0.00"
+        izz="0.001692" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/RR_hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0.501960784313725 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/RR_hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RR_hip_joint"
+    type="revolute">
+    <origin
+      xyz="0.12709 0.0615 0.0077356"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="base" />
+    <child
+      link="RR_hip" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.25"
+      upper="0.25"
+      effort="20"
+      velocity="10" />
+  </joint>
+  <link
+    name="RR_thigh">
+    <inertial>
+      <origin
+        xyz="-0.14296 -0.015465 0.022559"
+        rpy="0 0 0" />
+      <mass
+        value="1.623153" />
+      <inertia
+        ixx="0.007268"
+        ixy="-0.000732"
+        ixz="0.000177"
+        iyy="0.002162"
+        iyz="0.000980"
+        izz="0.007366" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/RR_thigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/RR_thigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RR_thigh_joint"
+    type="revolute">
+    <origin
+      xyz="-0.056059 -0.011641 0.059"
+      rpy="0 0 0" />
+    <parent
+      link="RR_hip" />
+    <child
+      link="RR_thigh" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5"
+      upper="1.5"
+      effort="20"
+      velocity="10" />
+  </joint>
+  <!-- <link
+    name="RR_calf">
+    <inertial>
+      <origin
+        xyz="0.0502864229248036 -0.0913683369165559 0.0100012603716604"
+        rpy="0 0 0" />
+      <mass
+        value="0.24357427073011" />
+      <inertia
+        ixx="0.000648204117665621"
+        ixy="-0.000308645680473211"
+        ixz="-2.22084372635169E-09"
+        iyy="0.000186059943789856"
+        iyz="5.13538413169624E-09"
+        izz="0.000823306990230793" />
+    </inertial> -->
+  <link
+    name="RR_calf">
+    <inertial>
+      <origin
+        xyz="0.050286422924934 -0.0913683369164015 0.0100012603719424"
+        rpy="0 0 0" />
+      <mass
+        value="0.243573" />
+      <inertia
+        ixx="0.001367"
+        ixy="-0.000642"
+        ixz="0.0"
+        iyy="0.000356"
+        iyz="0.0"
+        izz="0.001698" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/RR_calf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/RR_calf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RR_calf_joint"
+    type="revolute">
+    <origin
+      xyz="-0.011641 -0.20836 0.0365"
+      rpy="0 0 0" />
+    <parent
+      link="RR_thigh" />
+    <child
+      link="RR_calf" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-2.3"
+      upper="0"
+      effort="20"
+      velocity="10" />
+  </joint>
+  <link
+    name="RR_foot">
+    <inertial>
+      <origin
+        xyz="5.57990806338005E-09 0.000156464784550725 6.38025034006839E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0311902243903798" />
+      <inertia
+        ixx="5.06120841117781E-06"
+        ixy="1.89067421324778E-14"
+        ixz="8.44229932322898E-13"
+        iyy="4.98515638872325E-06"
+        iyz="-1.020641344911E-08"
+        izz="5.01872622594312E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/RR_foot.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_km1/meshes/RR_foot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RR_foot_joint"
+    type="fixed">
+    <origin
+      xyz="0.0962046871823301 -0.224068557253087 0.00999999999971268"
+      rpy="2.94324795442943 1.5707963267949 0" />
+    <parent
+      link="RR_calf" />
+    <child
+      link="RR_foot" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <transmission name="t11">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="FL_hip_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="a11">
+      <mechanicalReduction>1.0</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+   <transmission name="t12">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="FL_thigh_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="a12">
+      <mechanicalReduction>1.0</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+   <transmission name="t13">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="FL_calf_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="a13">
+      <mechanicalReduction>1.0</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+  <transmission name="t21">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="RL_hip_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="a21">
+      <mechanicalReduction>1.0</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+   <transmission name="t22">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="RL_thigh_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="a21">
+      <mechanicalReduction>1.0</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+   <transmission name="t23">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="RL_calf_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="a23">
+      <mechanicalReduction>1.0</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+   <transmission name="t31">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="FR_hip_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="a31">
+      <mechanicalReduction>1.0</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+   <transmission name="t32">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="FR_thigh_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="a32">
+      <mechanicalReduction>1.0</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+   <transmission name="t32">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="FR_calf_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="a32">
+      <mechanicalReduction>1.0</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+   <transmission name="t41">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="RR_hip_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="a41">
+      <mechanicalReduction>1.0</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+   <transmission name="t42">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="RR_thigh_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="a42">
+      <mechanicalReduction>1.0</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+   <transmission name="t43">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="RR_calf_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="a43">
+      <mechanicalReduction>1.0</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/horse</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      <legacyModeNS>true</legacyModeNS>
+    </plugin>
+  </gazebo>
+  <gazebo reference="base">
+    <kp>1000000.0</kp> 
+    <kd>1.0</kd>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+  </gazebo>
+
+  <gazebo reference="RR_foot">
+    <kp>1000000.0</kp> 
+    <kd>1.0</kd>
+    <mu1>0.6</mu1>
+    <mu2>0.6</mu2>
+    <minDepth>0.001</minDepth>
+  </gazebo>
+
+  <gazebo reference="FR_foot">
+  
+    <kp>1000000.0</kp> 
+    <kd>1.0</kd>
+    <mu1>0.6</mu1>
+    <mu2>0.6</mu2>
+    <minDepth>0.001</minDepth>
+  </gazebo>
+
+  <gazebo reference="FL_foot">
+    <kp>1000000.0</kp> 
+    <kd>1.0</kd>
+    <mu1>0.6</mu1>
+    <mu2>0.6</mu2>
+    <minDepth>0.001</minDepth>
+  </gazebo>
+
+  <gazebo reference="RL_foot">
+    <kp>1000000.0</kp> 
+    <kd>1.0</kd>
+    <mu1>0.6</mu1>
+    <mu2>0.6</mu2>
+    <minDepth>0.001</minDepth>
+  </gazebo>
+
+  <gazebo>
+      <plugin name="3dplot" filename="libLinkPlot3DPlugin.so">
+          <frequency>10</frequency>
+          <plot>
+              <link>base</link>
+              <pose>0 0 0 0 0 0</pose>
+              <material>Gazebo/Yellow</material>
+          </plot>
+      </plugin>
+  </gazebo>
+
+      <joint name="imu_joint" type="fixed">
+        <parent link="base"/>
+        <child link="imu_link"/>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+    </joint>
+
+    <link name="imu_link">
+        <inertial>
+            <mass value="0.001"/>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="red"/>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size=".001 .001 .001"/>
+            </geometry>
+        </collision>
+    </link>
+
+        <gazebo reference="imu_link">
+        <gravity>true</gravity>
+        <sensor name="imu_sensor" type="imu">
+            <always_on>true</always_on>
+            <update_rate>1000</update_rate>
+            <visualize>true</visualize>
+            <topic>__default_topic__</topic>
+            <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+                <topicName>base_imu</topicName>
+                <bodyName>imu_link</bodyName>
+                <updateRateHZ>1000.0</updateRateHZ>
+                <gaussianNoise>0.0</gaussianNoise>
+                <xyzOffset>0 0 0</xyzOffset>
+                <rpyOffset>0 0 0</rpyOffset>
+                <frameName>imu_link</frameName>
+            </plugin>
+            <pose>0 0 0 0 0 0</pose>
+        </sensor>
+    </gazebo>
+
+  
+  <!-- <gazebo reference="RR_foot">
+    <material>Gazebo/Red</material>
+    <mu1 value="10.0"/>
+    <mu2 value="10.0"/>
+    <kp value="0.3" />
+    <kd value="1.0" />
+    <fdir1 value="1 0 0"/>
+    <gravity value="true"/>
+  </gazebo> -->
+  
+   <gazebo 
+      reference="RR_foot_joint">
+     <provideFeedback>true</provideFeedback>
+     <disableFixedJointLumping>true</disableFixedJointLumping>
+   </gazebo>
+  
+  <gazebo>
+    <plugin name="ft_sensor" filename="libgazebo_ros_ft_sensor.so">
+      <updateRate>100.0</updateRate>
+      <topicName>RR_contact</topicName>
+      <jointName>RR_foot_joint</jointName>
+    </plugin>
+  </gazebo>
+
+  <gazebo 
+      reference="RL_foot_joint">
+     <provideFeedback>true</provideFeedback>
+     <disableFixedJointLumping>true</disableFixedJointLumping>
+  </gazebo>
+  
+  <gazebo>
+    <plugin name="ft_sensor" filename="libgazebo_ros_ft_sensor.so">
+      <updateRate>100.0</updateRate>
+      <topicName>RL_contact</topicName>
+      <jointName>RL_foot_joint</jointName>
+    </plugin>
+  </gazebo>
+
+     <gazebo 
+      reference="FL_foot_joint">
+     <provideFeedback>true</provideFeedback>
+     <disableFixedJointLumping>true</disableFixedJointLumping>
+   </gazebo>
+  
+  <gazebo>
+    <plugin name="ft_sensor" filename="libgazebo_ros_ft_sensor.so">
+      <updateRate>100.0</updateRate>
+      <topicName>FL_contact</topicName>
+      <jointName>FL_foot_joint</jointName>
+    </plugin>
+  </gazebo>
+
+     <gazebo 
+      reference="FR_foot_joint">
+     <provideFeedback>true</provideFeedback>
+     <disableFixedJointLumping>true</disableFixedJointLumping>
+   </gazebo>
+  
+  <gazebo>
+    <plugin name="ft_sensor" filename="libgazebo_ros_ft_sensor.so">
+      <updateRate>100.0</updateRate>
+      <topicName>FR_contact</topicName>
+      <jointName>FR_foot_joint</jointName>
+    </plugin>
+  </gazebo>
+</robot>

@@ -1,0 +1,4 @@
+<launch>
+    <node pkg = "ch1" type = "pointcloud2" name = "point_cloud_publisher_node" output = "screen"/>
+    <node pkg = "ch1" type = "tri_model" name = "tri_model" output = "screen"/>
+</launch>

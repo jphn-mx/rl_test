@@ -1,0 +1,955 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="g308_test3">
+  <link
+    name="base">
+    <inertial>
+      <origin
+        xyz="-0.0461979664524284 -1.17681768195707E-05 0.0105492310143218"
+        rpy="0 0 0" />
+      <mass
+        value="1.95581210125627" />
+      <inertia
+        ixx="0.0147778202660151"
+        ixy="-1.05162781463542E-07"
+        ixz="-1.09332218398292E-06"
+        iyy="0.0125847623047929"
+        iyz="1.48283341202769E-06"
+        izz="0.0210875822494919" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/base.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="FL_hip">
+    <inertial>
+      <origin
+        xyz="0.000645338589339253 0.000571806374731587 0.0692312452428767"
+        rpy="0 0 0" />
+      <mass
+        value="0.318232651145697" />
+      <inertia
+        ixx="0.000371905213951895"
+        ixy="8.54023233900234E-05"
+        ixz="-2.30943444769928E-08"
+        iyy="0.000273313681130012"
+        iyz="1.65092610589608E-08"
+        izz="0.000231734319828521" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/FL_hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/FL_hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL_hip_joint"
+    type="continuous">
+    <origin
+      xyz="-0.121206585889125 0.1475 0.012200615375217"
+      rpy="1.5707963267949 0.523598775598297 -3.14159265358979" />
+    <parent
+      link="base" />
+    <child
+      link="FL_hip" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="20"
+      velocity="10" />
+  </joint>
+  <link
+    name="FL_thigh">
+    <inertial>
+      <origin
+        xyz="-0.0122643937169565 -0.00575009686516084 -0.0438255043724123"
+        rpy="0 0 0" />
+      <mass
+        value="0.50615450098718" />
+      <inertia
+        ixx="0.000325118667045125"
+        ixy="-8.90254538876752E-05"
+        ixz="-4.23242336848074E-09"
+        iyy="0.000503708941101464"
+        iyz="1.23318635161356E-08"
+        izz="0.00080129336816092" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/FL_thigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/FL_thigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL_thigh_joint"
+    type="continuous">
+    <origin
+      xyz="0.0259057621135404 0.0151299038105593 0.0802000000000014"
+      rpy="-1.5707963267949 -0.654498469497903 2.09439510239319" />
+    <parent
+      link="FL_hip" />
+    <child
+      link="FL_thigh" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="20"
+      velocity="10" />
+  </joint>
+  <link
+    name="FL_calf">
+    <inertial>
+      <origin
+        xyz="0.0633313265646676 -0.0400200837453653 0.0140342754513096"
+        rpy="0 0 0" />
+      <mass
+        value="0.101165794083911" />
+      <inertia
+        ixx="6.03690927040475E-05"
+        ixy="7.94426080977234E-05"
+        ixz="1.99930744368977E-10"
+        iyy="0.000141463572684114"
+        iyz="-1.30568603445521E-10"
+        izz="0.000194608017998216" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/FL_calf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/FL_calf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL_calf_joint"
+    type="continuous">
+    <origin
+      xyz="-0.138581929876684 -0.0574025148547549 -0.0820000000000014"
+      rpy="0 0 -0.916297857296994" />
+    <parent
+      link="FL_thigh" />
+    <child
+      link="FL_calf" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="20"
+      velocity="10" />
+  </joint>
+  <link
+    name="FL_foot">
+    <inertial>
+      <origin
+        xyz="3.97575067312417E-09 -0.0001584054612353 1.23199644930239E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0324776231528866" />
+      <inertia
+        ixx="5.27515525323503E-06"
+        ixy="1.11411299511892E-13"
+        ixz="2.27169126250626E-12"
+        iyy="5.19366816295094E-06"
+        iyz="-1.25235730408225E-12"
+        izz="5.22489160656527E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/FL_foot.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/FL_foot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL_foot_joint"
+    type="fixed">
+    <origin
+      xyz="0.115518487694803 -0.106314214351308 0.0141499999999999"
+      rpy="-1.48600618207356 -1.56891663625823 1.5707963267944" />
+    <parent
+      link="FL_calf" />
+    <child
+      link="FL_foot" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="RL_hip">
+    <inertial>
+      <origin
+        xyz="0.000645338582855925 0.000571806385955699 0.0692312452422405"
+        rpy="0 0 0" />
+      <mass
+        value="0.318232651145697" />
+      <inertia
+        ixx="0.000371905213951895"
+        ixy="8.54023233900234E-05"
+        ixz="-2.3094344476699E-08"
+        iyy="0.000273313681130012"
+        iyz="1.65092610591062E-08"
+        izz="0.000231734319828521" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/RL_hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/RL_hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RL_hip_joint"
+    type="continuous">
+    <origin
+      xyz="-0.121206585889128 -0.1475 0.012200615375218"
+      rpy="-1.5707963267949 -0.523598775598297 3.14159265358979" />
+    <parent
+      link="base" />
+    <child
+      link="RL_hip" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="20"
+      velocity="10" />
+  </joint>
+  <link
+    name="RL_thigh">
+    <inertial>
+      <origin
+        xyz="-0.0122643929441131 -0.00575009671002186 -0.0438255043724107"
+        rpy="0 0 0" />
+      <mass
+        value="0.50615450098718" />
+      <inertia
+        ixx="0.000325118667056995"
+        ixy="-8.9025453883413E-05"
+        ixz="-4.23239831283032E-09"
+        iyy="0.000503708941089595"
+        iyz="1.23318862716324E-08"
+        izz="0.000801293368160921" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/RL_thigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/RL_thigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RL_thigh_joint"
+    type="continuous">
+    <origin
+      xyz="0.0259057621135434 0.0151299038105513 0.0802000000000017"
+      rpy="1.57079632679489 0.654498469497904 -1.0471975511966" />
+    <parent
+      link="RL_hip" />
+    <child
+      link="RL_thigh" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="20"
+      velocity="10" />
+  </joint>
+  <link
+    name="RL_calf">
+    <inertial>
+      <origin
+        xyz="0.0633313265654134 -0.040020083743763 0.0130342754513093"
+        rpy="0 0 0" />
+      <mass
+        value="0.101165794083911" />
+      <inertia
+        ixx="6.03690927040389E-05"
+        ixy="7.94426080977188E-05"
+        ixz="1.99930744155499E-10"
+        iyy="0.000141463572684123"
+        iyz="-1.30568603301694E-10"
+        izz="0.000194608017998216" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/RL_calf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/RL_calf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RL_calf_joint"
+    type="continuous">
+    <origin
+      xyz="-0.138581929876707 -0.0574025148547746 -0.0810000000000004"
+      rpy="0 0 -0.916297857296993" />
+    <parent
+      link="RL_thigh" />
+    <child
+      link="RL_calf" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="20"
+      velocity="10" />
+  </joint>
+  <link
+    name="RL_foot">
+    <inertial>
+      <origin
+        xyz="3.97575047883514E-09 -0.00015840546010662 1.23310489597017E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0324776231528866" />
+      <inertia
+        ixx="5.27515525323503E-06"
+        ixy="1.11411303662083E-13"
+        ixz="2.27169126186566E-12"
+        iyy="5.19366816295094E-06"
+        iyz="-1.25235730245611E-12"
+        izz="5.22489160656527E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/RL_foot.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/RL_foot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RL_foot_joint"
+    type="fixed">
+    <origin
+      xyz="0.115518487694805 -0.106314214351309 0.0131499999999998"
+      rpy="0 1.5707963267949 0" />
+    <parent
+      link="RL_calf" />
+    <child
+      link="RL_foot" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="FR_hip">
+    <inertial>
+      <origin
+        xyz="-0.000713181430966478 -0.00045429912609808 0.0692312452428759"
+        rpy="0 0 0" />
+      <mass
+        value="0.318232651145697" />
+      <inertia
+        ixx="0.000371905213951894"
+        ixy="8.54023233900235E-05"
+        ixz="2.30943444769025E-08"
+        iyy="0.000273313681130012"
+        iyz="-1.6509261058809E-08"
+        izz="0.000231734319828521" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/FR_hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/FR_hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR_hip_joint"
+    type="continuous">
+    <origin
+      xyz="0.0287934141108762 0.1475 0.0122006153752184"
+      rpy="1.5707963267949 0.523598775598298 -3.14159265358979" />
+    <parent
+      link="base" />
+    <child
+      link="FR_hip" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="20"
+      velocity="10" />
+  </joint>
+  <link
+    name="FR_thigh">
+    <inertial>
+      <origin
+        xyz="0.00462433769752282 -0.012694628670369 -0.0438255041269623"
+        rpy="0 0 0" />
+      <mass
+        value="0.50615450098718" />
+      <inertia
+        ixx="0.000503448388620749"
+        ixy="8.93042692045328E-05"
+        ixz="4.2323748225123E-09"
+        iyy="0.000325379219525839"
+        iyz="-1.23318899879321E-08"
+        izz="0.000801293368160919" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/FR_thigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/FR_thigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR_thigh_joint"
+    type="continuous">
+    <origin
+      xyz="-0.025980762113534 -0.0149999999999987 0.0801999999999967"
+      rpy="-1.57079632679489 1.43989663289532 -1.04719755119659" />
+    <parent
+      link="FR_hip" />
+    <child
+      link="FR_thigh" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="20"
+      velocity="10" />
+  </joint>
+  <link
+    name="FR_calf">
+    <inertial>
+      <origin
+        xyz="0.063331326564677 0.0400200837453495 -0.00403427545130952"
+        rpy="0 0 0" />
+      <mass
+        value="0.10116579408391" />
+      <inertia
+        ixx="6.0369092704038E-05"
+        ixy="-7.9442608097719E-05"
+        ixz="-1.99930744103636E-10"
+        iyy="0.000141463572684123"
+        iyz="-1.30568603271664E-10"
+        izz="0.000194608017998216" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/FR_calf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/FR_calf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR_calf_joint"
+    type="continuous">
+    <origin
+      xyz="0.0574025148547634 -0.1385819298767 -0.0639999999999969"
+      rpy="0 0 -3.01069295969021" />
+    <parent
+      link="FR_thigh" />
+    <child
+      link="FR_calf" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="20"
+      velocity="10" />
+  </joint>
+  <link
+    name="FR_foot">
+    <inertial>
+      <origin
+        xyz="3.97575034005726E-09 -0.000158405461235356 1.23199639379123E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0324776231528866" />
+      <inertia
+        ixx="5.27515525323503E-06"
+        ixy="1.11411291052154E-13"
+        ixz="2.27169126480951E-12"
+        iyy="5.19366816295095E-06"
+        iyz="-1.25235731003795E-12"
+        izz="5.22489160656528E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/FR_foot.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/FR_foot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR_foot_joint"
+    type="fixed">
+    <origin
+      xyz="0.115518487694804 0.106314214351307 -0.00414999999999992"
+      rpy="1.65558647151609 1.56891663625823 -1.57079632679454" />
+    <parent
+      link="FR_calf" />
+    <child
+      link="FR_foot" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="RR_hip">
+    <inertial>
+      <origin
+        xyz="-0.00084478279977334 -3.68438684702922E-05 0.064231245242878"
+        rpy="0 0 0" />
+      <mass
+        value="0.318232651145697" />
+      <inertia
+        ixx="0.000421217912344398"
+        ixy="9.77568411331706E-09"
+        ixz="1.17456584712419E-08"
+        iyy="0.000224000982737508"
+        iyz="-2.58446117130837E-08"
+        izz="0.000231734319828521" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/RR_hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/RR_hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RR_hip_joint"
+    type="continuous">
+    <origin
+      xyz="0.028793 -0.1525 0.012201"
+      rpy="-1.5708 0 3.1416" />
+    <parent
+      link="base" />
+    <child
+      link="RR_hip" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="20"
+      velocity="10" />
+  </joint>
+  <link
+    name="RR_thigh">
+    <inertial>
+      <origin
+        xyz="0.00573132719895955 -0.0132041690029469 -0.0438255041269507"
+        rpy="0 0 0" />
+      <mass
+        value="0.50615450098718" />
+      <inertia
+        ixx="0.000503448388552977"
+        ixy="8.93042689131321E-05"
+        ixz="-4.23237656011606E-09"
+        iyy="0.00032537921959361"
+        iyz="1.2331894391849E-08"
+        izz="0.000801293368160918" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/RR_thigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/RR_thigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RR_thigh_joint"
+    type="continuous">
+    <origin
+      xyz="-0.03 0 0.0752"
+      rpy="1.5708 -1.4399 1.5708" />
+    <parent
+      link="RR_hip" />
+    <child
+      link="RR_thigh" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="20"
+      velocity="10" />
+  </joint>
+  <link
+    name="RR_calf">
+    <inertial>
+      <origin
+        xyz="0.0633313263817583 0.0400200807620098 0.0179657245486917"
+        rpy="0 0 0" />
+      <mass
+        value="0.101165794083911" />
+      <inertia
+        ixx="6.03690927040393E-05"
+        ixy="-7.94426080977182E-05"
+        ixz="-1.99930744157339E-10"
+        iyy="0.000141463572684124"
+        iyz="-1.30568603324412E-10"
+        izz="0.000194608017998218" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/RR_calf.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/RR_calf.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RR_calf_joint"
+    type="continuous">
+    <origin
+      xyz="0.057403 -0.13858 -0.086"
+      rpy="0 0 -3.0107" />
+    <parent
+      link="RR_thigh" />
+    <child
+      link="RR_calf" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="20"
+      velocity="10" />
+  </joint>
+  <link
+    name="RR_foot">
+    <inertial>
+      <origin
+        xyz="3.97575702915098E-09 -0.000158405471271994 1.23174562216555E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0324776231528866" />
+      <inertia
+        ixx="5.27515525323502E-06"
+        ixy="1.11411299838917E-13"
+        ixz="2.27169126358221E-12"
+        iyy="5.19366816295093E-06"
+        iyz="-1.25235730271671E-12"
+        izz="5.22489160656526E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/RR_foot.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://g308_test3/meshes/RR_foot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RR_foot_joint"
+    type="fixed">
+    <origin
+      xyz="0.11552 0.10631 0.01785"
+      rpy="0 1.5708 3.14159" />
+    <parent
+      link="RR_calf" />
+    <child
+      link="RR_foot" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

@@ -1,0 +1,26 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/mx/test/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/mx/test/src/gazebo_ros_pkgs/gazebo_plugins/include/**",
+        "/home/mx/test/src/gazebo_ros_pkgs/gazebo_ros/include/**",
+        "/home/mx/test/src/gazebo_ros_pkgs/gazebo_ros_control/include/**",
+        "/home/mx/test/src/livox_laser_simulation/include/**",
+        "/home/mx/test/src/sim/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

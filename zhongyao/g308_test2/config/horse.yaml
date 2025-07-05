@@ -1,0 +1,76 @@
+horse:
+
+  # publish all joints
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 100
+  
+  #zuoqian
+  FL_hip_joint:
+    type: effort_controllers/JointPositionController 
+    joint: FL_hip_joint
+    pid: {p: 50.0,i: 0.01,d: 0.1}
+
+  FL_thigh_joint:
+    type: effort_controllers/JointPositionController
+    joint: FL_thigh_joint
+    pid: {p: 50.0,i: 0.01,d: 0.1}
+
+  FL_calf_joint:
+    type: effort_controllers/JointPositionController
+    joint: FL_calf_joint
+    pid: {p: 50.0,i: 0.01,d: 0.1}
+
+  # zuohou
+  RL_hip_joint:
+    type: effort_controllers/JointPositionController
+    joint: RL_hip_joint
+    pid: {p: 50.0,i: 0.01,d: 0.1}
+
+  RL_thigh_joint:
+    type: effort_controllers/JointPositionController
+    joint: RL_thigh_joint
+    pid: {p: 50.0,i: 0.01,d: 0.1}
+
+  RL_calf_joint:
+    type: effort_controllers/JointPositionController
+    joint: RL_calf_joint
+    pid: {p: 50.0,i: 0.01,d: 0.1}
+
+  # youqian
+  FR_hip_joint:
+    type: effort_controllers/JointPositionController
+    joint: FR_hip_joint
+    pid: {p: 50.0,i: 0.01,d: 0.1}
+
+  FR_thigh_joint:
+    type: effort_controllers/JointPositionController
+    joint: FR_thigh_joint
+    pid: {p: 50.0,i: 0.01,d: 0.1}
+
+  FR_calf_joint:
+    type: effort_controllers/JointPositionController
+    joint: FR_calf_joint
+    pid: {p: 50.0,i: 0.01,d: 0.1}
+    
+  #youhou
+  RR_hip_joint:
+    type: effort_controllers/JointPositionController
+    joint: RR_hip_joint
+    pid: {p: 50.0,i: 0.01,d: 0.1}
+
+  RR_thigh_joint:
+    type: effort_controllers/JointPositionController
+    joint: RR_thigh_joint
+    pid: {p: 50.0,i: 0.01,d: 0.1}
+
+  RR_calf_joint:
+    type: effort_controllers/JointPositionController
+    joint: RR_calf_joint
+    pid: {p: 50.0,i: 0.01,d: 0.1}
+
+  # position Controllers
+  # p 根据误差来调整 i 消除稳态误差 d 避免过冲
+  # D 值过高可能导致系统对噪声过于敏感，变得不稳定 D 值过低可能使系统过冲较大，产生较长时间的振荡。
+  # I 值过高可能导致系统积分饱和，出现过冲和振荡 I 值过低可能使系统无法完全消除误差，无法精确达到目标值。
+  # P 值过高可能导致系统过度调节，出现振荡或不稳定 P 值过低可能导致系统响应迟钝，达不到目标

@@ -1,0 +1,332 @@
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="car"> 
+    <xacro:property name="w_l" value="0.04"/>
+    <xacro:property name="w_r" value="0.05" />
+    <xacro:property name="PI" value="3.1415" />
+
+    <link name="base_footprint">
+
+    </link>
+
+    <link name="base_link"> <!--底盘-->
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="1.0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/><!--转动惯量-->
+        </inertial>
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry> 
+                <box size="0.25 0.1 0.1"/>
+            </geometry>
+            <material name="blue">
+                <color rgba="0.0 0.0 1.0 1.0"/> <!--在rviz中的颜色 a是透明度-->
+            </material>
+        </visual>
+        <!--gazebo中需要-->
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.25 0.1 0.1"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="wheel1">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="1.0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${w_r}" length="${w_l}"/>
+            </geometry>
+            <material name="red">
+                <color rgba="1.0 0.0 0.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${w_r}" length="${w_l}"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="wheel2">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="1.0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${w_r}" length="${w_l}"/>
+            </geometry>
+            <material name="red">
+                <color rgba="1.0 0.0 0.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${w_r}" length="${w_l}"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="wheel3">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="1.0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${w_r}" length="${w_l}"/>
+            </geometry>
+            <material name="black">
+                <color rgba="0.0 0.0 0.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${w_r}" length="${w_l}"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="wheel4">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="1.0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${w_r}" length="${w_l}"/>
+            </geometry>
+            <material name="black">
+                <color rgba="0.0 0.0 0.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${w_r}" length="${w_l}"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <!-- <link name="imu">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="1.0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.03 0.03 0.02"/>
+            </geometry>
+            <material name="red">
+                <color rgba="1.0 0.0 0.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.03 0.03 0.02"/>
+            </geometry>
+        </collision>
+    </link> -->
+
+    <joint name="w1_b" type="continuous">
+        <origin xyz="0.1 0.07 -0.05" rpy="${PI/2} 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="wheel1"/>
+        <axis xyz="0.0 0.0 1.0"/>
+    </joint>
+
+    <joint name="w2_b" type="continuous">
+        <origin xyz="0.1 -0.07 -0.05" rpy="${PI/2} 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="wheel2"/>
+        <axis xyz="0.0 0.0 1.0"/>
+    </joint>
+
+    <joint name="w3_b" type="continuous">
+        <origin xyz="-0.1 0.07 -0.05" rpy="${PI/2} 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="wheel3"/>
+        <axis xyz="0.0 0.0 1.0"/>
+    </joint>
+
+    <joint name="w4_b" type="continuous">
+        <origin xyz="-0.1 -0.07 -0.05" rpy="${PI/2} 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="wheel4"/>
+        <axis xyz="0.0 0.0 1.0"/>
+    </joint>
+
+    <joint name="bl_bf" type="fixed">
+        <origin xyz="0.0 0.0 0.1" rpy="0.0 0.0 0.0"/>
+        <parent link="base_footprint"/>
+        <child link="base_link"/>
+    </joint>
+
+    <!-- <joint name="imu_bl" type="fixed">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="imu"/>
+    </joint> -->
+
+    <gazebo reference="base_link">
+        <material>Gazebo/Orange</material>
+    </gazebo>
+
+    <gazebo reference="wheel1">
+        <material>Gazebo/Red</material>
+    </gazebo>
+
+    <gazebo reference="wheel2">
+        <material>Gazebo/Red</material>
+    </gazebo>
+
+    <gazebo reference="wheel3">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+    <gazebo reference="wheel4">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+    <!-- <gazebo reference="imu">
+        <material>Gazebo/Orange</material>
+    </gazebo> -->
+
+    <gazebo>
+        <plugin name="mecanum_controller" filename="libgazebo_ros_planar_move.so">
+            <ros>
+                <!-- <namespace>/demo</namespace> -->
+                <remapping>cmd_vel:=cmd_vel</remapping>
+                <remapping>odom:=odom</remapping>
+            </ros>
+
+            <update_rate>100</update_rate>
+            <publish_rate>100</publish_rate>
+
+            <publish_odom>false</publish_odom>
+            <publish_odom_tf>false</publish_odom_tf>
+
+            <leftFrontJoint>w1_b</leftFrontJoint>
+            <rightFrontJoint>w2_b</rightFrontJoint>
+            <leftRearJoint>w3_b</leftRearJoint>
+            <rightRearJoint>w4_b</rightRearJoint>
+            <wheelSeparation>0.14</wheelSeparation>
+            <wheelDiameter>0.1</wheelDiameter>
+        </plugin>
+    </gazebo>
+
+    <!-- <gazebo reference="imu">
+        <sensor name="imu_sensor" type="imu">
+            <always_on>true</always_on>
+            <update_rate>100</update_rate>
+            <visualize>true</visualize>
+            <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+                <topicName>/livox/imu</topicName>
+                <bodyName>imu</bodyName>
+                <updateRateHZ>100.0</updateRateHZ>
+                <gaussianNoise>0.0</gaussianNoise>
+                <xyzOffset>0 0 0</xyzOffset>
+                <rpyOffset>0 0 0</rpyOffset>
+                <frameName>imu</frameName>
+                <serviceName>default_service</serviceName>
+                <alwaysOn>true</alwaysOn>
+                <maxAngularVelocity>100.0</maxAngularVelocity>
+                <noiseDensity>0.0</noiseDensity>
+                <randomWalk>0.0</randomWalk>
+                <ros>
+                    <remapping>~/out:=/livox/imu</remapping>
+                </ros>
+            </plugin>
+        </sensor>
+    </gazebo> -->
+
+    <link name="laser">
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry >
+            <box size="0.03 0.03 0.03" />
+        </geometry>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry >
+            <box size="0.03 0.03 0.03" />
+        </geometry>
+        </collision>   
+        <inertial>
+            <mass value="0.001"/>
+            <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+        </inertial> 
+    </link>
+
+    <joint name="laser_joint" type="fixed">
+        <origin xyz="0 0 0.0515" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="laser"/>
+    </joint>
+
+    <gazebo reference="laser">
+        <sensor type="ray" name="rplidar">
+        <pose>0 0 0 0 0 0</pose>
+        <visualize>true</visualize>
+        <update_rate>10</update_rate>
+        <ray>
+            <scan>
+            <horizontal>
+                <samples>360</samples>
+                <resolution>1</resolution>
+                <min_angle>-3</min_angle>
+                <max_angle>3</max_angle>
+            </horizontal>
+            </scan>
+            <range>
+            <min>0.10</min>
+            <max>30.0</max>
+            <resolution>0.01</resolution>
+            </range>
+            <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.01</stddev>
+            </noise>
+        </ray>
+        <plugin name="gazebo_rplidar" filename="libgazebo_ros_laser.so">
+            <topicName>/scan</topicName>
+            <frameName>laser</frameName>
+        </plugin>
+        </sensor>
+    </gazebo>
+
+    <xacro:include filename="$(find livox_laser_simulation)/urdf/livox_mid360.xacro"/>
+
+    <joint name="livox_base2base_footprint" type="fixed">
+        <origin xyz="0.0 0.0 0.2" rpy="0.0 0.0 0.0"/>
+        <parent link="base_footprint"/>
+        <child link="laser_livox"/>
+    </joint>
+
+    <joint name="avia2fp" type="fixed">
+        <origin xyz="0.0 0.0 0.2" rpy="0.0 0.0 0.0"/>
+        <parent link="base_footprint"/>
+        <child link="livox_base"/>
+    </joint>
+
+</robot>

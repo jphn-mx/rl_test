@@ -1,0 +1,72 @@
+horse:
+
+  # publish all joints
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # position Controllers
+
+  #zuohou
+  zuohou1j_position_controller:
+    type: effort_controllers/JointPositionController 
+    joint: zuohou1j
+    pid: {p: 1000.0,i: 0.01,d: 20}
+
+  zuohou2j_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: zuohou2j
+    pid: {p: 1000.0,i: 0.01,d: 20}
+
+  zuohou3j_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: zuohou3j
+    pid: {p: 1000.0,i: 0.01,d: 20}
+
+  # zuoqian
+  zuoqian1j_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: zuoqian1j
+    pid: {p: 1000.0,i: 0.01,d: 20}
+
+  zuoqian2j_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: zuoqian2j
+    pid: {p: 1000.0,i: 0.01,d: 20}
+
+  zuoqian3j_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: zuoqian3j
+    pid: {p: 1000.0,i: 0.01,d: 20}
+
+  # youhou
+  youhou1j_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: youhou1j
+    pid: {p: 1000.0,i: 0.01,d: 20}
+
+  youhou2j_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: youhou2j
+    pid: {p: 1000.0,i: 0.01,d: 20}
+
+  youhou3j_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: youhou3j
+    pid: {p: 1000.0,i: 0.01,d: 20}
+    
+  #youqian
+  youqian1j_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: youqian1j
+    pid: {p: 1000.0,i: 0.01,d: 20}
+
+  youqian2j_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: youqian2j
+    pid: {p: 1000.0,i: 0.01,d: 20}
+
+  youqian3j_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: youqian3j
+    pid: {p: 1000.0,i: 0.01,d: 20}

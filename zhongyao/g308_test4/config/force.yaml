@@ -1,0 +1,69 @@
+horse:
+  
+  # publish all joints
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 100
+
+  FL_hip_joint:
+    type: effort_controllers/JointEffortController
+    joint: FL_hip_joint
+    pid: {p: 50.0,i: 0.01,d: 0.1}
+
+  FL_thigh_joint:
+    type: effort_controllers/JointEffortController
+    joint: FL_thigh_joint
+    pid: {p: 50.0,i: 0.01,d: 0.1}
+
+  FL_calf_joint:
+    type: effort_controllers/JointEffortController
+    joint: FL_calf_joint
+    pid: {p: 50.0,i: 0.01,d: 0.1}
+
+  # zuohou
+  RL_hip_joint:
+    type: effort_controllers/JointEffortController
+    joint: RL_hip_joint
+    pid: {p: 50.0,i: 0.01,d: 0.1}
+
+  RL_thigh_joint:
+    type: effort_controllers/JointEffortController
+    joint: RL_thigh_joint
+    pid: {p: 50.0,i: 0.01,d: 0.1}
+
+  RL_calf_joint:
+    type: effort_controllers/JointEffortController
+    joint: RL_calf_joint
+    pid: {p: 50.0,i: 0.01,d: 0.1}
+
+  # youqian
+  FR_hip_joint:
+    type: effort_controllers/JointEffortController
+    joint: FR_hip_joint
+    pid: {p: 50.0,i: 0.01,d: 0.1}
+
+  FR_thigh_joint:
+    type: effort_controllers/JointEffortController
+    joint: FR_thigh_joint
+    pid: {p: 50.0,i: 0.01,d: 0.1}
+
+  FR_calf_joint:
+    type: effort_controllers/JointEffortController
+    joint: FR_calf_joint
+    pid: {p: 50.0,i: 0.01,d: 0.1}
+    
+  #youhou
+  RR_hip_joint:
+    type: effort_controllers/JointEffortController
+    joint: RR_hip_joint
+    pid: {p: 50.0,i: 0.01,d: 0.1}
+
+  RR_thigh_joint:
+    type: effort_controllers/JointEffortController
+    joint: RR_thigh_joint
+    pid: {p: 50.0,i: 0.01,d: 0.1}
+
+  RR_calf_joint:
+    type: effort_controllers/JointEffortController
+    joint: RR_calf_joint
+    pid: {p: 50.0,i: 0.01,d: 0.1}

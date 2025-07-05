@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="chuanlianma_test3">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.159363388187043 -0.0197161253894639 -0.179827123744285"
+        rpy="0 0 0" />
+      <mass
+        value="0.805022144867874" />
+      <inertia
+        ixx="0.00639531802970519"
+        ixy="-9.77568411193592E-09"
+        ixz="2.5844611713867E-08"
+        iyy="0.00665273886148208"
+        iyz="1.17456584711926E-08"
+        izz="0.00855411586754855" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chuanlianma_test3/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chuanlianma_test3/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="0.0010541048683331 0.000175694738037219 0.0654972380283042"
+        rpy="0 0 0" />
+      <mass
+        value="0.313270878552616" />
+      <inertia
+        ixx="0.000420442071174248"
+        ixy="9.77568413485631E-09"
+        ixz="-1.17456584873445E-08"
+        iyy="0.00022321922429073"
+        iyz="2.58446116621399E-08"
+        izz="0.000230094065529792" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chuanlianma_test3/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chuanlianma_test3/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="continuous">
+    <origin
+      xyz="-0.13137 -0.017 0.081797"
+      rpy="1.5708 0.015886 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="0.01" />
+    <dynamics
+      damping="0.2"
+      friction="0.5" />
+  </joint>
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="-0.00517668263636005 -0.00272837285226221 -0.0419081887813389"
+        rpy="0 0 0" />
+      <mass
+        value="0.474905842722764" />
+      <inertia
+        ixx="0.000324368848619166"
+        ixy="-8.87915477280549E-05"
+        ixz="-4.23239864232219E-09"
+        iyy="0.000499996579725748"
+        iyz="1.2331876339248E-08"
+        izz="0.000798349323427996" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chuanlianma_test3/meshes/link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chuanlianma_test3/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="continuous">
+    <origin
+      xyz="0.03015 0.00015 0.0752"
+      rpy="-1.5708 -1.0761 1.5708" />
+    <parent
+      link="link1" />
+    <child
+      link="link2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="0.01" />
+    <dynamics
+      damping="0.2"
+      friction="0.5" />
+  </joint>
+  <link
+    name="link3">
+    <inertial>
+      <origin
+        xyz="0.0640853900922428 -0.0519701348689848 0.0102825164809162"
+        rpy="0 0 0" />
+      <mass
+        value="0.154778284218652" />
+      <inertia
+        ixx="7.39290282272028E-05"
+        ixy="8.3100214665692E-05"
+        ixz="-1.32005087462868E-06"
+        iyy="0.000140620551371325"
+        iyz="9.74098465383069E-07"
+        izz="0.000201926581280346" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chuanlianma_test3/meshes/link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://chuanlianma_test3/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint3"
+    type="continuous">
+    <origin
+      xyz="-0.13858 -0.057403 -0.07725"
+      rpy="0.015886 0 -0.49471" />
+    <parent
+      link="link2" />
+    <child
+      link="link3" />
+    <axis
+      xyz="0 0.015885 0.99987" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="0.01" />
+    <dynamics
+      damping="0.2"
+      friction="0.5" />
+  </joint>
+   <transmission name="t1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="a1">
+      <mechanicalReduction>1.0</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="t2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="a2">
+      <mechanicalReduction>1.0</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="t3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="a3">
+      <mechanicalReduction>1.0</mechanicalReduction> <!--传动比-->
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/chuanlian</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      <legacyModeNS>true</legacyModeNS>
+    </plugin>
+  </gazebo>
+    <gazebo reference="base_link">
+    <kp>1000000000.0</kp>  
+    <!-- 刚度系数 -->
+    <kd>100000000.0</kd>
+    <!-- 阻尼系数 -->
+    <mu1>100000000.0</mu1>
+    <!-- 第一摩擦方向的库伦摩擦系数 -->
+    <mu2>100000000.0</mu2>
+    <!-- 垂直于第一摩擦方向的第二摩擦方向摩擦系数 -->
+    <minDepth>0.001</minDepth>
+  </gazebo>
+
+  <gazebo reference="link1">
+    <kp>1000000.0</kp> 
+    <kd>1.0</kd>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <minDepth>0.001</minDepth>
+  </gazebo>
+
+  <gazebo reference="link2">
+  
+    <kp>1000000.0</kp> 
+    <kd>1.0</kd>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <minDepth>0.001</minDepth>
+  </gazebo>
+
+  <gazebo reference="link3">
+    <kp>1000000.0</kp> 
+    <kd>1.0</kd>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <minDepth>0.001</minDepth>
+  </gazebo>
+
+</robot>
